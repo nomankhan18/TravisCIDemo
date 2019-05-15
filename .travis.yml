@@ -1,5 +1,4 @@
-  setup_travis
-  language: android
+language: android
 jdk: oraclejdk8
 env:
   global:
