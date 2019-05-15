@@ -25,7 +25,7 @@ platform :android do
   lane :beta do
     gradle(task: "clean assembleBeta")
     APK_LOCATION = "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}"
-
+    puts APK_LOCATION
   end
 
   desc "Deploy a new version to the Google Play"
