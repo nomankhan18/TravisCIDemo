@@ -29,7 +29,6 @@ android {
         beta {
             debuggable true
             minifyEnabled false
-            signingConfig signingConfigs.debug
             buildConfigField "String", "BASE_URL", '"Beta build Travis CI!"'
         }
     }
