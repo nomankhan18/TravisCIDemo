@@ -1,9 +1,13 @@
-language: android
+  setup_travis
+  language: android
 jdk: oraclejdk8
 env:
   global:
     - ANDROID_TARGET=android-28
     - ANDROID_ABI=armeabi-v7a
+
+install:
+        - bundle install
 android:
   components:
     - tools
@@ -14,4 +18,5 @@ android:
     - $ANDROID_TARGET
     - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
 script:
-  - ./gradlew assembleBeta --stacktrace
+    - fastlane beta
+
