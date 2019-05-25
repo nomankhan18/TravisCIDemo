@@ -17,12 +17,14 @@ android {
             keyPassword 'android'
             storePassword 'android'
         }
+        config
     }
 
     buildTypes {
         release {
             minifyEnabled false
             debuggable false
+            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", '"Release build Travis CI!"'
         }
@@ -34,6 +36,15 @@ android {
     }
 
     buildToolsVersion = '28.0.3'
+    def isRunningOnTravis = System.getenv("CI") == "true"
+
+    if (isRunningOnTravis) {
+        // configure keystore
+        signingConfigs.release.storeFile = file("../test.jks")
+        signingConfigs.release.storePassword = System.getenv("keystore_password")
+        signingConfigs.release.keyAlias = System.getenv("keystore_alias")
+        signingConfigs.release.keyPassword = System.getenv("keystore_alias_password")
+    }
 }
 
 dependencies {

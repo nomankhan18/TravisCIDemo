@@ -25,12 +25,13 @@ platform :android do
   lane :beta do
     gradle(task: "clean assembleBeta")
     APK_LOCATION = "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}"
-    puts APK_LOCATION
+    puts #{APK_LOCATION}
   end
 
-  desc "Deploy a new version to the Google Play"
-  lane :deploy do
+  desc "Submit a new Release Build "
+  lane :release do
     gradle(task: "clean assembleRelease")
-    upload_to_play_store
+    APK_LOCATION = "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}"
+    puts #{APK_LOCATION}
   end
 end
