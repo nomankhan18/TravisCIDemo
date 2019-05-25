@@ -8,6 +8,7 @@ env:
 before_install:
   - openssl aes-256-cbc -K $encrypted_ce564b4226fe_key -iv $encrypted_ce564b4226fe_iv -in
   - test.jks.enc -out test.jks -d
+
 install:
         - bundle install
 android:
