@@ -2,24 +2,20 @@ language: android
 jdk: oraclejdk8
 env:
   global:
-    - ANDROID_TARGET=android-28
-    - ANDROID_ABI=armeabi-v7a
-
-before_install:
-  - openssl aes-256-cbc -K $encrypted_ce564b4226fe_key -iv $encrypted_ce564b4226fe_iv -in
-  - test.jks.enc -out test.jks -d
-
-install:
-        - bundle install
+  - ANDROID_TARGET=android-28
+  - ANDROID_ABI=armeabi-v7a
 android:
   components:
-    - tools
-    - platform-tools
-    - build-tools-28.0.3
-    - android-28
-    - extra-android-m2repository
-    - $ANDROID_TARGET
-    - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
+  - tools
+  - platform-tools
+  - build-tools-28.0.3
+  - android-28
+  - extra-android-m2repository
+  - "$ANDROID_TARGET"
+  - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
 script:
-    - fastlane release
-
+- fastlane release
+-
+before_install:
+- openssl aes-256-cbc -K $encrypted_ce564b4226fe_key -iv $encrypted_ce564b4226fe_iv
+  -in test.jks.enc -out test.jks -d
