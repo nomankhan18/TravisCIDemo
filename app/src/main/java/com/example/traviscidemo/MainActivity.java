@@ -10,5 +10,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Lof
+
+        //TravisCIDemo/build/outputs/apk/TravisCIDemo*release*.apk
     }
 }
