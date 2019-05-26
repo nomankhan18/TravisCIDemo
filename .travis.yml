@@ -4,6 +4,7 @@ env:
   global:
   - ANDROID_TARGET=android-28
   - ANDROID_ABI=armeabi-v7a
+  - secure: Mcj3sGJh/NtJeWi/jdeKpIALsD44zrxnhnya5E6k4Ii7Kdh7Zn7Q+XW8pFYq6s/393USsaBpXd5FcwY3jdGhKXHVV8n9MQPyOcNP0pe9Tj3jiSNqIeVpNjULbhbC+uDgOFrfBvzRLVtrWY8mAAHTWG9Mlqt5NIK6eHCDaLvSBwqm0SjVo50L7fo2XdS7ChfTN/LyTQ3rM/7/+E4qIZSfIPeTVnl3fNxhKm/10XlmW/nyd20/hx3m5zjPbu2RK4nnzzMsGCkb4KnGBKzFX2TlitIVOgyTmdXo4gDHOCZqUNhxffDJ3IPx5TwHegMuvYMBboUQ+B3GVyNdEOkGWDa98y6gnAzTfyHGhC4oe1fVIU8qNMOJJPrKMWypaybh8/glbXXaPxgbq572ZUnSAuKjXcBGHmrTOr25sCtUwSDutmq6iAqEp6EfX/Ae3RIYi5IOucXJu2LR3I0qdR7+d87tPW5wrJy1vCxy4JHWwl+repGz3HK4TelNgmvasiPuo5dC+OzylAwr0YK0iVoiCXG0Gq7GQiSgX6vhbu6gT52P041bbMyrEdp1KHpxCCpAKDrUjjtyobEyJq6JqgB/jkmGfXWWFhLYcDE7EFwgT8plV990DE13Quk2vAi5AhM4+nO67Iz8uhW9hr2kycOM+66A2aMvdOySmu6A4RktOif7ZY0=
 android:
   components:
   - tools
@@ -17,10 +18,10 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_ce564b4226fe_key -iv $encrypted_ce564b4226fe_iv
   -in test.jks.enc -out test.jks -d
 script:
-  - ./gradlew assembleRelease
+- "./gradlew assembleRelease"
 deploy:
   provider: releases
-  api_key: 28dc510e1cbb0142bd3a1adf2f1a7e702cfc4fa7
+  api_key:
   secure: MB1jEQl8DDrRtWLFX8ikc/z3/tFUtMmElMYI7cWRbez4AZAud9aYadRzcJJ9Felw/tGfK3sVRhL5oe0PT6gIlsMXDKS8xOysSma+13Cw9Azh1udKATi93vgKgBXgRn6k+BbTYlgbjk27admW9lMWDMyrERnYloADFOXAdNwo9dlJhKpZ9cq3XxN5Al6mpXMHilL2Yn0RDQqzp6Dt3U33PdTvHIcvSwzf37LiGjDNHXsUZiXaM7XevsQWBW74YQiFkd1i+xwxbtG9HTh3rH7haHaBSHhkiXecO+31uvewrpaeRk2O9bEwcAuROEoLr739cOKkaBBWqT4FEYgU7qvFWZAeuBGnBDKcT0smxBjstrOcOlMvyIHdv/QGVPxQlfMltRn2XvfUYsH5p7HeQY5btwhcebtHwf89B7ydHwYdQytRsoqt4u7P7lw8wJEcZ6v3qZudPYlc+hgr+zf+hA8PCGof3hSlr1MhTMdN72d4Zcx40eyifTcCRWZWuWcHrImLYtaZ537Ov6VyIHhtBCrjHtW+uO86yybIROKSLZnN1FT07Kersch37tXnpgfLan1His5/NSZmPfHfQppHhB1mpDh0WUM1n74qeA4v+/c3oCmEQvwg9euPtlPOSyLYKbDxDoWOb0enpYohIC1c9KdTlHp2H2pCk2iH6YRcz5nhOzg=
   file: TravisCIDemo/build/outputs/apk/TravisCIDemo*release*.apk
   file_glob: true
@@ -29,6 +30,5 @@ deploy:
     branch: master
     tags: true
     repo: nomankhan18/TravisCIDemo
-
 after_success:
-  - sh set_tags.sh
+- sh set_tags.sh
