@@ -31,7 +31,5 @@ platform :android do
   desc "Submit a new Release Build "
   lane :release do
     gradle(task: "clean assembleRelease")
-    APK_LOCATION = "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}"
-    puts #{APK_LOCATION}
   end
 end
