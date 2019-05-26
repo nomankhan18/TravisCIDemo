@@ -11,12 +11,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
-        debug {
+       /* debug {
             storeFile rootProject.file('/Users/noman/.android/debug.keystore')
             keyAlias 'androiddebugkey'
             keyPassword 'android'
             storePassword 'android'
-        }
+        }*/
         release
     }
 
