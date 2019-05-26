@@ -24,7 +24,7 @@ android {
         release {
             minifyEnabled false
             debuggable false
-            signingConfig signingConfigs.config
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", '"Release build Travis CI!"'
         }
