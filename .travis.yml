@@ -17,7 +17,7 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_ce564b4226fe_key -iv $encrypted_ce564b4226fe_iv
   -in test.jks.enc -out test.jks -d
 script:
-  - "./gradlew clean build connectedAndroidTest -PdisablePreDex --stacktrace"
+  - "./gradlew assembleRelease"
 deploy:
   provider: releases
   api_key:
@@ -27,6 +27,7 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
+    tags: true
     repo: nomankhan18/TravisCIDemo
 
 after_success:
