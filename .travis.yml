@@ -19,14 +19,12 @@ before_install:
   -in test.jks.enc -out test.jks -d
 script:
 - ./gradlew assembleRelease
-
 before_deploy:
   - export TRAVIS_TAG="1.0.$TRAVIS_BUILD_NUMBER"
   - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
   - git config --local user.name "$USER_NAME"
   - git config --local user.email "$USER_EMAIL"
   - git tag "$TRAVIS_TAG" "$TRAVIS_COMMIT"
-
 deploy:
   provider: releases
   api_key:
