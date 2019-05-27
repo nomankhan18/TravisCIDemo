@@ -1,6 +1,6 @@
 # Tag last commit as 'latest'.
 
-if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
+if [ "$TRAVIS_BRANCH" = "newt" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
   git config --global user.email "n.khan@boutiqaat.com"
   git config --global user.name "nomankhan18"
 
