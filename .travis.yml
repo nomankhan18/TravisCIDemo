@@ -21,7 +21,7 @@ script:
 - "./gradlew assembleRelease"
 deploy:
   provider: releases
-  user: "n.khan@boutiqaat.com"
+  user: "nomankhan18"
   password: "nomi@111"
   file: TravisCIDemo/build/outputs/apk/TravisCIDemo*release*.apk
   file_glob: true
