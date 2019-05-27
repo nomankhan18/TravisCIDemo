@@ -5,8 +5,8 @@ if [ "$TRAVIS_BRANCH" = "$BRANCH" ]; then
   	if [ -z "$TRAVIS_TAG" ]; then
 	    echo -e "Starting to tag commit.\n"
 
-	    git config --global user.email "n.khan@boutiqaat.com"
-	    git config --global user.name "nomankhan18"
+	   # git config --global user.email "n.khan@boutiqaat.com"
+	   # git config --global user.name "nomankhan18"
 
 	    # Add tag and push to master.
 	    git tag -a v${TRAVIS_BUILD_NUMBER} -m "Travis build $TRAVIS_BUILD_NUMBER pushed a tag."
