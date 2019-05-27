@@ -27,6 +27,12 @@ deploy:
   skip_cleanup: true
   on:
     repo: nomankhan18/TravisCIDemo
-    tags: false
+    tags: true
 after_success:
 - sh set_tags.sh
+notifications:
+  email:
+    recipients:
+      - n.khan@boutiqaat.com
+    on_success: always
+    on_failure: never
