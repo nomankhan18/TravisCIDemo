@@ -4,7 +4,7 @@ if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then
   git config --global user.email "n.khan@boutiqaat.com"
   git config --global user.name "nomankhan18"
 
-  git remote add release "https://${GH_TOKEN}@github.com/nomankhan18/travis-android.git"
+  git remote add release "https://${GH_TOKEN}@github.com/nomankhan18/TravisCIDemo.git"
 
   git push -d release latest
   git tag -d latest
