@@ -26,7 +26,7 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-    tags: true
+    tags: false
     repo: nomankhan18/TravisCIDemo
 after_success:
 - sh set_tags.sh
