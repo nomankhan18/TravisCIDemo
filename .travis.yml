@@ -21,8 +21,8 @@ script:
 - "./gradlew assembleRelease"
 deploy:
   provider: releases
-  api_key:
-    secure: Mcj3sGJh/NtJeWi/jdeKpIALsD44zrxnhnya5E6k4Ii7Kdh7Zn7Q+XW8pFYq6s/393USsaBpXd5FcwY3jdGhKXHVV8n9MQPyOcNP0pe9Tj3jiSNqIeVpNjULbhbC+uDgOFrfBvzRLVtrWY8mAAHTWG9Mlqt5NIK6eHCDaLvSBwqm0SjVo50L7fo2XdS7ChfTN/LyTQ3rM/7/+E4qIZSfIPeTVnl3fNxhKm/10XlmW/nyd20/hx3m5zjPbu2RK4nnzzMsGCkb4KnGBKzFX2TlitIVOgyTmdXo4gDHOCZqUNhxffDJ3IPx5TwHegMuvYMBboUQ+B3GVyNdEOkGWDa98y6gnAzTfyHGhC4oe1fVIU8qNMOJJPrKMWypaybh8/glbXXaPxgbq572ZUnSAuKjXcBGHmrTOr25sCtUwSDutmq6iAqEp6EfX/Ae3RIYi5IOucXJu2LR3I0qdR7+d87tPW5wrJy1vCxy4JHWwl+repGz3HK4TelNgmvasiPuo5dC+OzylAwr0YK0iVoiCXG0Gq7GQiSgX6vhbu6gT52P041bbMyrEdp1KHpxCCpAKDrUjjtyobEyJq6JqgB/jkmGfXWWFhLYcDE7EFwgT8plV990DE13Quk2vAi5AhM4+nO67Iz8uhW9hr2kycOM+66A2aMvdOySmu6A4RktOif7ZY0=
+  user: "n.khan@boutiqaat.com"
+  password: "nomi@111"
   file: TravisCIDemo/build/outputs/apk/TravisCIDemo*release*.apk
   file_glob: true
   skip_cleanup: true
