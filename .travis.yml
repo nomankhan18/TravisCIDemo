@@ -25,7 +25,6 @@ deploy:
   file_glob: true
   skip_cleanup: true
   on:
-    branch: master
     tags: false
     repo: nomankhan18/TravisCIDemo
 after_success:
