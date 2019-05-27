@@ -4,7 +4,7 @@ env:
   global:
   - ANDROID_TARGET=android-28
   - ANDROID_ABI=armeabi-v7a
-  - secure: Mcj3sGJh/NtJeWi/jdeKpIALsD44zrxnhnya5E6k4Ii7Kdh7Zn7Q+XW8pFYq6s/393USsaBpXd5FcwY3jdGhKXHVV8n9MQPyOcNP0pe9Tj3jiSNqIeVpNjULbhbC+uDgOFrfBvzRLVtrWY8mAAHTWG9Mlqt5NIK6eHCDaLvSBwqm0SjVo50L7fo2XdS7ChfTN/LyTQ3rM/7/+E4qIZSfIPeTVnl3fNxhKm/10XlmW/nyd20/hx3m5zjPbu2RK4nnzzMsGCkb4KnGBKzFX2TlitIVOgyTmdXo4gDHOCZqUNhxffDJ3IPx5TwHegMuvYMBboUQ+B3GVyNdEOkGWDa98y6gnAzTfyHGhC4oe1fVIU8qNMOJJPrKMWypaybh8/glbXXaPxgbq572ZUnSAuKjXcBGHmrTOr25sCtUwSDutmq6iAqEp6EfX/Ae3RIYi5IOucXJu2LR3I0qdR7+d87tPW5wrJy1vCxy4JHWwl+repGz3HK4TelNgmvasiPuo5dC+OzylAwr0YK0iVoiCXG0Gq7GQiSgX6vhbu6gT52P041bbMyrEdp1KHpxCCpAKDrUjjtyobEyJq6JqgB/jkmGfXWWFhLYcDE7EFwgT8plV990DE13Quk2vAi5AhM4+nO67Iz8uhW9hr2kycOM+66A2aMvdOySmu6A4RktOif7ZY0=
+  - secure: E2qkU2pwQigSzRhw9vA2AAbfmivxCi+cM9FKnytq3WT1qxBvT8ZuZuEHEdrbq5k9YMexrBrCSpf2W3+7pVurq3Fd0ZQ9GuC1yhK9Q0+/oo1a9otAzZX+4vBHpTm/d6F6f2rHJ6DNoQUniGNrY1zElXlTi/Irhxfl25GS6QSZQBadHdDUViuENvy24G+R36NmSlflH8h1f9bw2ihHrfsnKb7USnSGBK3KrhUd034ugn/bVlxuuHtue9KqQA97mbx8FykefsOwgx1hsv5rmp1IFYGXCzUWj3j8uInEypW5JDZVuzziKcoZfr7WQVSuFfKmoVs7g+6z2pYQngdSz268lPb52XvryhfYYFL8yfcsWhwlXeEjJoQwSx75/FBj8Ex65ZClBiBIgQZnrLGy4H170BSgp4IClXf+2Y2oXFFcWXmbEgriJA5vCd+gvuwTXvFooubey4HsKj/Yfyw67lEi5glxvTe91+uwG8MjgMsRLuuXXsvrXaGpRzTFXV/N7/c2tc0kHfe30v/LtNFmexwk6bsmMlA2+F0O10UNU5gl2lAo6ICXS7F83p84vkgFm/YLG7EiKzCe+3uHwdtCJfzU0WAozSiB2hduT+vFKAuoXu/EeVW7KxpDUB/VC0WupITOoPlaOtLXCZuKwZDxL6UzmNj1Y3tJX4vw0JXGFx27NEc=
 android:
   components:
   - tools
@@ -21,13 +21,12 @@ script:
 - "./gradlew assembleRelease"
 deploy:
   provider: releases
-  user: "nomankhan18"
-  password: "nomi@111"
-  file: TravisCIDemo/build/outputs/apk/TravisCIDemo*release*.apk
-  file_glob: true
+  api_key:
+    secure: P/X26pR4sZm0URmfTycoeQgECqfpTjuWlfpMbah3FTQJLjxLwYwDh0A7GgI6408xNywF745aKU62I3jDc1eR1O3K9K2Vvn9ZVnEC/rJ5com0Owi7d1LqQwCaFgQU33IHkASMzI3OtsNRxfgloTaGH55U2JHOGN4kKtppds5tXUoFW9R4yB0OPONYMUYfvCGIAPtrE9Y3yBO4+NyhmZMJCRHbFZ2HcrR2H9D0Haxia/iZ93/I9PCw624u0N9Aber6b6cWQRDA8JPpxQfjAyU2LhV4wE6ea+u1HEy6QAeLXBgKe/OtSzhpsrd1f5wpxxrX2nXk9/Y+zk39qMYLvON7K5T+Szr5mjgvyDgK0U0kF0INHgDbBppUzBTJQQ1KSxwrBowue5TFJMw9cID1QMVG5qeLLqEVGsDTTrsVf+4b4DSyVI4LM2BiytTHYubqqNRfke2Nz7u0Xo4kDuFbVPyPSyS3uY9TU5Rj7uasD4aKKYo56oGbN0EG1xBUDimWWCiEh3ASOy/jEqJKwzvX4Dt79MylROBludmVuYdwDmLMnXOKv6i0rO/9AvS4hgwGP0lIjWTWF50aTGs+guwF8JBmt7ovKun3FL31vGUgz41P516ngjgdp7V6W5pbULVdh5B+Kv9Ai5nKgGTnk2wzSH/MVnyihp+fZZevUUuof0ziZb4=
+  file: app/build/outputs/apk/release/app*release*.apk
   skip_cleanup: true
   on:
-    tags: false
     repo: nomankhan18/TravisCIDemo
+    tags: false
 after_success:
 - sh set_tags.sh
