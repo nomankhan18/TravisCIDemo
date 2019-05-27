@@ -35,7 +35,3 @@ after_success:
 - sh set_tags.sh
 notifications:
   email: false
-    recipients:
-      - n.khan@boutiqaat.com
-    on_success: always
-    on_failure: never
