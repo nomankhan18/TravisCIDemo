@@ -30,3 +30,5 @@ deploy:
       api_key: "661713c2b553f16e81a31da48b141a6bd9b4ecf7"
       file: app/build/outputs/apk/app-release.apk
       skip_cleanup: true
+      on:
+        branch: newt
