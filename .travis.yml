@@ -35,7 +35,7 @@ deploy:
       verbose: true
       skip_cleanup: true
       on:
-        branch: newt
+        branch: beta
         tags: false
 
 notifications:
