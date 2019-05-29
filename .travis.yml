@@ -35,7 +35,7 @@ deploy:
       verbose: true
       skip_cleanup: true
       on:
-        branch: beta
+        branch: qa
         tags: false
 
 notifications:
