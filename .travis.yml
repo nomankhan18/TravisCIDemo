@@ -19,12 +19,6 @@ before_install:
   -in test.jks.enc -out test.jks -d
 script:
 - ./gradlew assembleRelease
-before_deploy:
-    # Set up git user name and tag this commit
-    - git config --local user.name "nomankhan18"
-    - git config --local user.email "n.khan@boutiqaat.com"
-    - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-    - git tag $TRAVIS_TAG
 deploy:
       provider: releases
       api_key:
@@ -36,7 +30,10 @@ deploy:
       skip_cleanup: true
       on:
         branch: newt
-        tags: false
+        tags: true
+        repo: nomankhan18/TravisCIDemo
+after_success:
+          - sh set_tags.sh
 
 
 
