@@ -35,7 +35,7 @@ deploy:
       skip_cleanup: true
       on:
         branch: newt
-        tags: true
+        tags: false
 
 
 
