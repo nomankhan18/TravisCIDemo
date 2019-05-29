@@ -38,5 +38,8 @@ deploy:
         branch: newt
         tags: false
 
-
+notifications:
+  email:
+    on_success: never
+    on_failure: never
 
