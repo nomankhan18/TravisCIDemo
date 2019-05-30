@@ -5,6 +5,7 @@ env:
   global:
   - ANDROID_TARGET=android-28
   - ANDROID_ABI=armeabi-v7a
+  - TYPE=_Android
   - secure: E2qkU2pwQigSzRhw9vA2AAbfmivxCi+cM9FKnytq3WT1qxBvT8ZuZuEHEdrbq5k9YMexrBrCSpf2W3+7pVurq3Fd0ZQ9GuC1yhK9Q0+/oo1a9otAzZX+4vBHpTm/d6F6f2rHJ6DNoQUniGNrY1zElXlTi/Irhxfl25GS6QSZQBadHdDUViuENvy24G+R36NmSlflH8h1f9bw2ihHrfsnKb7USnSGBK3KrhUd034ugn/bVlxuuHtue9KqQA97mbx8FykefsOwgx1hsv5rmp1IFYGXCzUWj3j8uInEypW5JDZVuzziKcoZfr7WQVSuFfKmoVs7g+6z2pYQngdSz268lPb52XvryhfYYFL8yfcsWhwlXeEjJoQwSx75/FBj8Ex65ZClBiBIgQZnrLGy4H170BSgp4IClXf+2Y2oXFFcWXmbEgriJA5vCd+gvuwTXvFooubey4HsKj/Yfyw67lEi5glxvTe91+uwG8MjgMsRLuuXXsvrXaGpRzTFXV/N7/c2tc0kHfe30v/LtNFmexwk6bsmMlA2+F0O10UNU5gl2lAo6ICXS7F83p84vkgFm/YLG7EiKzCe+3uHwdtCJfzU0WAozSiB2hduT+vFKAuoXu/EeVW7KxpDUB/VC0WupITOoPlaOtLXCZuKwZDxL6UzmNj1Y3tJX4vw0JXGFx27NEc=
 
 android:
@@ -36,7 +37,7 @@ before_deploy:
     # Set up git user name and tag this commit
     - git config --local user.name "$USER_NAME"
     - git config --local user.email "$USER_EMAIL"
-    - export TRAVIS_TAG=$TRAVIS_JOB_NUMBER - Android
+    - export TRAVIS_TAG=$TRAVIS_JOB_NUMBER $TYPE
     - git tag $TRAVIS_TAG
 
 deploy:
