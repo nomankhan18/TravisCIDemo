@@ -14,7 +14,7 @@ android:
   - build-tools-28.0.3
   - android-28
   - extra-android-m2repository
-  - "$ANDROID_TARGET"
+  - $ANDROID_TARGET
   - sys-img-${ANDROID_ABI}-${ANDROID_TARGET}
 
 before_cache:
@@ -36,7 +36,7 @@ before_deploy:
     # Set up git user name and tag this commit
     - git config --local user.name "$USER_NAME"
     - git config --local user.email "$USER_EMAIL"
-    - export TRAVIS_TAG=$TRAVIS_JOB_NUMBER + Android
+    - export TRAVIS_TAG=$TRAVIS_JOB_NUMBER - Android
     - git tag $TRAVIS_TAG
 
 deploy:
